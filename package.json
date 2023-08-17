@@ -17,5 +17,8 @@
     "gulp-sass": "^5.1.0",
     "postcss": "^8.4.21",
     "sass": "^1.57.1"
+  },
+  "dependencies": {
+    "browser-sync": "^2.29.3"
   }
 }
