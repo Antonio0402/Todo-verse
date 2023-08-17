@@ -17,7 +17,7 @@ function app(tasks, output, dispatch) {
     };
     ToDoList.push(newTask);
     updatePersistent(ToDoList).set("myToDoList");
-    setText();
+    setText("");
 
     app(ToDoList, output, dispatch);
   });
