@@ -1,0 +1,25 @@
+@use "../util" as u;
+
+$fonts: Roboto, sans-serif;
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  min-height: 100svh;
+  font-size: u.rem(16);
+  font-family: $fonts;
+  background: url("../img/type-writer.jpg") no-repeat center center/cover;
+  color: var(--font-color);
+  padding: u.rem(24);
+}

@@ -1,0 +1,23 @@
+@use "../util" as u;
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(u.rem(22), u.rem(16) + 2vw, u.rem(36));
+}
+
+label {
+  font-size: clamp(u.rem(20), u.rem(16) + 2vw, u.rem(32));
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}

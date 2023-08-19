@@ -1,0 +1,120 @@
+@use "../util" as u;
+@use "../components" as *;
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: auto;
+  gap: u.rem(24);
+
+  &__new-task-entry,
+  &__list-container {
+    background-color: var(--background-color);
+    padding: clamp(u.rem(16), u.rem(8) + 2vw, u.rem(24));
+    width: min(calc(90% - u.rem(16)), u.rem(800));
+    margin-inline: auto;
+    border-radius: u.rem(16);
+    box-shadow: var(--box-shadow);
+  }
+
+  &__new-task-entry {
+    position: sticky;
+    top: 0;
+
+    #task-entry-form {
+      display: flex;
+      justify-content: space-between;
+      gap: u.rem(8);
+
+      label {
+        @include u.visually-hidden;
+      }
+
+      input[id="new-task"] {
+        min-width: calc(80% - u.rem(16));
+        border-radius: u.rem(8);
+        padding: u.rem(8) u.rem(16);
+        font-size: u.rem(20);
+        border-width: u.rem(2);
+        border-color: black;
+        border-style: solid;
+
+        &:hover,
+        &:focus {
+          outline: 1px solid black;
+          box-shadow: 0 0 0 u.rem(4) var(--btn-hover-color);
+        }
+      }
+
+      button[id="add-task"] {
+        font-size: clamp(u.rem(20), u.rem(12) + 2vw, u.rem(24));
+        padding: u.rem(8) u.rem(12);
+        // width: u.rem(48);
+        // min-height: u.rem(48);
+        @extend %large-button;
+      }
+    }
+  }
+
+  &__list-container {
+    min-height: 60vh;
+
+    .list-title {
+      display: flex;
+      justify-content: space-between;
+      gap: u.rem(8);
+      align-items: flex-end;
+      margin-bottom: u.rem(8);
+
+      button[id="clear-tasks"] {
+        font-size: clamp(u.rem(16), u.rem(8) + 2vw, u.rem(20));
+        padding: u.rem(8) u.rem(4);
+        @extend %large-button;
+      }
+
+      hr {
+        color: black;
+        width: 100%;
+      }
+    }
+    .task {
+      margin: u.rem(8) 0;
+      width: 100%;
+      // padding: clamp(u.rem(8), u.rem(2) + 2vw, u.rem(16));
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: u.rem(16);
+
+      label {
+        padding: u.rem(8);
+        flex-basis: 75%;
+      }
+
+      .checked {
+        text-decoration: line-through;
+      }
+
+      button {
+        flex-shrink: 1;
+        width: clamp(u.rem(32), u.rem(24) + 2vw, u.rem(48));
+        height: clamp(u.rem(24), u.rem(16) + 2vw, u.rem(48));
+        font-size: 1rem;
+      }
+
+      .check-task {
+        @extend .btn;
+        font-size: u.rem(16);
+      }
+      .delete-task {
+        @extend .btn;
+        font-size: u.rem(16);
+      }
+    }
+    .confirmation {
+      position: absolute;
+      left: -100%;
+    }
+  }
+}

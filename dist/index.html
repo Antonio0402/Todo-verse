@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/06e8af72a3.js" crossorigin="anonymous"></script>
+  <title>Todo Web App</title>
+</head>
+
+<body>
+  <main class="grid">
+    <section class="grid__new-task-entry">
+      <form id="task-entry-form">
+        <label for="new-task">Enter a new task</label>
+        <input type="text" name="new-task" id="new-task" size="40" autocomplete="off" placeholder="Enter Task"
+          tabindex="0" />
+        <button type="submit" id="add-task" class="btn" title="Add new task" aria-label="Add new task to list"
+          tabindex="0">
+          <i class="fa-solid fa-circle-plus"></i>
+        </button>
+      </form>
+    </section>
+    <section class="grid__list-container">
+      <div class="list-title">
+        <h1 tabindex="0">To Do List</h1>
+        <button type="button" id="clear-tasks" class="btn" title="Clear the list"
+          aria-label="Remove all tasks in the list" tabindex="0">
+          Clear
+        </button>
+      </div>
+      <hr />
+      <div id="list-tasks">
+        <!-- <div class="task">
+          <label for="1">eat</label>
+          <button type="button" class="btn" title="check button"
+          aria-label="Completed the task" tabindex="0"><i class="fa-solid fa-circle-check"></i></button>
+          <button type="button" id="1" class="btn" title="delete button"
+          aria-label="Delete the task" tabindex="0"><i class="fa-solid fa-trash"></i></button>
+        </div> -->
+      </div>
+      <p class="confirmation" id="confirmation" aria-live="assertive"></p>
+    </section>
+  </main>
+</body>
+<!--Scripts-->
+
+<script type="module" src="js/main.js"></script>
+
+</html>

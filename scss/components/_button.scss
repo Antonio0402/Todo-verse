@@ -1,0 +1,26 @@
+@use "../util" as u;
+
+%large-button {
+  min-width: u.rem(48);
+  min-height: u.rem(48);
+}
+
+.btn {
+  background-color: var(--background-color);
+  color: var(--font-color);
+  border: u.rem(2) solid black;
+  border-radius: u.rem(8);
+  outline: none;
+  @include u.transition-ease;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: black;
+    color: white;
+    box-shadow: 0 0 0 u.rem(4) var(--btn-hover-color);
+  }
+}
