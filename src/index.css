@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+@layer components {
+  .btn {
+    @apply isolate bg-white text-black border-2 border-black focus:outline-none hover:outline-none transition-all duration-200 ease-in-out hover:cursor-pointer hover:bg-black focus:bg-black hover:text-white focus:text-white shadow;
+  }
+}
