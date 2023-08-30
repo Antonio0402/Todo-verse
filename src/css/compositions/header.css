@@ -1,0 +1,10 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: var(--header-vertical-alignment, center);
+  gap: var(--gutter, var(space-size-1));
+}
+
+.header__button {
+  justify-content: end;
+}

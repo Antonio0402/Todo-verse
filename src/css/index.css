@@ -1,0 +1,89 @@
+@import 'custom-prop.css';
+/* Compositions */
+@import './compositions/index.css';
+
+/* Blocks */
+@import './blocks/index.css';
+
+/* Utilities */
+@import './utilities/index.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+@layer base {
+  /* Global styles */
+  body {
+    padding: var(--space-size-2) var(--space-size-1);
+    @apply bg-background grid place-items-center font-sans;
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 1.1;
+    font-weight: 900;
+  }
+
+  h1 {
+    @apply text-size-4;
+  }
+
+  h2 {
+    @apply text-size-3;
+  }
+
+  h3 {
+    @apply text-size-2;
+  }
+
+  p,
+  li {
+    max-width: 70ch;
+  }
+
+  h1 {
+    max-width: 15ch;
+  }
+
+  h2,
+  h3 {
+    max-width: 30ch;
+  }
+
+  a {
+    color: currentcolor;
+    text-decoration-color: var(--color-primary);
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  /* Prose */
+  h2,
+  h3 {
+    --flow-space: var(--space-size-3);
+  }
+
+  h2 + *,
+  h3 + * {
+    --flow-space: var(--space-base);
+  }
+
+  input {
+    margin: calc(var(--space-base) * 0.75) 0;
+    padding: calc(var(--space-base) * 0.75) var(--space-base);
+    border-radius: calc(var(--space-base) * 0.75);
+    border: 1.5px solid var(--color-input);
+  }
+
+  /* So text scale renders nicely */
+  div[class*='text-'] {
+    --flow-space: 1rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+}

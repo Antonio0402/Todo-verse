@@ -1,0 +1,33 @@
+/* VARIABLES GENERATED WITH TAILWIND CONFIG ON 8/30/2023.
+  Tokens location: ./tailwind.config.cjs */
+
+:root {
+  --color-background: #dff6f6;
+  --color-text: #727290;
+  --color-secondary: #d8d8d8;
+  --color-edit: #86b6b6;
+  --color-edit-hover: #b6dfba;
+  --color-edit-active: #8db591;
+  --color-delete: #ffafa3;
+  --color-delete-hover: #ffc9c1;
+  --color-create: #6c7394;
+  --color-signout-text: #fff;
+  --color-signout-hover: #af5e5e;
+  --color-signout-active: #af5151;
+  --color-input: #e6e8ec;
+  --color-danger: #ff3232;
+  --space-size-0: clamp(0.83rem, 0.9rem + -0.32vw, 0.67rem);
+  --space-base: clamp(1rem, 1rem + 0vw, 1rem);
+  --space-size-1: clamp(1.2rem, 1.08rem + 0.59vw, 1.5rem);
+  --space-size-2: clamp(1.44rem, 1.12rem + 1.58vw, 2.25rem);
+  --space-size-3: clamp(1.73rem, 1.09rem + 3.21vw, 3.38rem);
+  --space-size-4: clamp(2.07rem, 0.91rem + 5.83vw, 5.06rem);
+  --space-size-5: clamp(2.49rem, 0.5rem + 9.96vw, 7.59rem);
+  --size-size-0: clamp(0.83rem, 0.9rem + -0.32vw, 0.67rem);
+  --size-base: clamp(1rem, 1rem + 0vw, 1rem);
+  --size-size-1: clamp(1.2rem, 1.08rem + 0.59vw, 1.5rem);
+  --size-size-2: clamp(1.44rem, 1.12rem + 1.58vw, 2.25rem);
+  --size-size-3: clamp(1.73rem, 1.09rem + 3.21vw, 3.38rem);
+  --size-size-4: clamp(2.07rem, 0.91rem + 5.83vw, 5.06rem);
+  --size-size-5: clamp(2.49rem, 0.5rem + 9.96vw, 7.59rem);
+}

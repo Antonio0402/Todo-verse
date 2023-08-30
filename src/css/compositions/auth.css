@@ -1,0 +1,15 @@
+.auth {
+  display: flex;
+  justify-content: center;
+  margin: calc(var(--space-base) * 0.25);
+}
+
+.auth__form {
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+}
+
+.auth__options {
+  display: flex;
+}

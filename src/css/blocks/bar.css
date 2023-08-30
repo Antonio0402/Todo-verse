@@ -1,0 +1,15 @@
+.bar {
+  width: 200px;
+  height: 14px;
+  border-radius: calc(var(--space-base) * 0.5);
+  overflow: hidden;
+}
+
+.bar__inner {
+  height: 14px;
+  align-items: center;
+}
+
+.bar[data-bar='progress'] {
+  background-color: var(--color-secondary);
+}

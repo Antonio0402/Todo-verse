@@ -1,0 +1,7 @@
+.app {
+  display: grid;
+  gap: var(--gutter, calc(var(--space-size-0) / 2));
+  padding: var(--space-size-0);
+  width: 800px;
+  margin-block: (--space-size-1);
+}

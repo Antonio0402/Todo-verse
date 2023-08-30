@@ -1,0 +1,91 @@
+.btn {
+  border-style: solid;
+  border-width: 1.5px;
+  text-transform: uppercase;
+  margin: 0 calc(var(--space-base) * 0.25);
+  padding: calc(var(--space-base) * 0.25) calc(var(--space-base) * 0.75);
+  border-radius: calc(var(--space-base) * 0.75);
+  font-size: calc(var(--size-base) * 0.75);
+  background-color: transparent;
+}
+
+.btn[data-btn='signout'] {
+  border-color: var(--color-delete);
+  color: var(--color-signout-text);
+  background-color: var(--color-delete);
+}
+.btn[data-btn='signout']:hover {
+  border-color: var(--color-signout-hover);
+}
+
+.btn[data-btn='signout']:active {
+  background-color: var(--color-signout-active);
+  color: white;
+  border-color: var(--color-signout-active);
+}
+
+.btn[data-btn='create'] {
+  border-color: var(--color-create);
+  color: var(--color-create);
+}
+.btn[data-btn='create']:hover {
+  background-color: var(--color-create);
+  border-color: var(--color-create);
+  color: white;
+}
+.btn[data-btn='edit'] {
+  border-color: var(--color-edit);
+  color: var(--color-edit);
+  background-color: transparent;
+}
+.btn[data-btn='edit']:hover {
+  background-color: var(--color-edit-hover);
+}
+.btn[data-btn='edit']:active {
+  border-color: var(--color-edit-active);
+  color: white;
+  background-color: var(--color-edit-active);
+}
+
+.btn[data-btn='delete'] {
+  border-color: var(--color-delete);
+  color: var(--color-delete);
+}
+.btn[data-btn='delete']:hover {
+  background-color: var(--color-delete-hover);
+}
+.btn[data-btn='delete']:active {
+  color: white;
+}
+
+.btn[data-btn='auth'] {
+  font-size: var(--size-base);
+  width: 50%;
+  padding: calc(var(--space-base) * 0.5);
+  border: none;
+  color: var(--color-text);
+}
+
+.btn[data-btn='close'] {
+  position: relative;
+  padding: calc(var(--space-base) * 0.5) calc(var(--space-base) * 0.75);
+  line-height: 1;
+  color: var(--color-text);
+  font-size: var(--size-size-1);
+  text-transform: none;
+  background: var(--color-background);
+  border-radius: 50%;
+
+  &:hover {
+    background: transparent;
+  }
+
+  &:hover::after {
+    content: '';
+    position: absolute;
+    inset: 0 0 0 0;
+    border-radius: 50%;
+    background: var(--color-danger);
+    opacity: 0.2;
+  }
+}
