@@ -6,12 +6,12 @@ export const login = async (user_email: string, password: string) => {
 
   return user_email || password
     ? await fetch(`${API_AUTH_URL}/login`, {
-      method: "POST",
-      credentials: "same-origin",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json"
       },
+      credentials: "same-origin",
+      method: "POST",
       body: JSON.stringify({
         user_email,
         password
