@@ -14,6 +14,7 @@ const corsOptions: CorsOptions = {
   allowedHeaders: ["Origin", 'X-Requested-With', "Content", 'Accept', "Content-Type", "Authorization", "Cookie"],
   maxAge: 86400,
   credentials: true,
+  exposedHeaders: ['set-cookie']
 }
 
 export default corsOptions;
