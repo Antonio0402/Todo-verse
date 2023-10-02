@@ -31,6 +31,7 @@ if (!(process.env.PORT && process.env.CLIENT_ORIGIN_URL)) {
 
 const port = parseInt(process.env.PORT, 10);
 const app = express();
+app.set('trust proxy', 1)
 
 //* Cross Origin Resource Sharing
 // app.use(cors(function (_req, cb) {
@@ -64,11 +65,11 @@ app.use(helmet({
 
 app.use(cors(corsOptions));
 
-//* built-in middleware to handle urlencoded form data
-app.use(express.urlencoded({ extended: true }));
-
 //* built-in middleware for json
 app.use(express.json());
+
+//* built-in middleware to handle urlencoded form data
+app.use(express.urlencoded({ extended: true }));
 
 //* middleware for cookies
 app.use(cookieParser());
@@ -96,7 +97,7 @@ app.use(expressSession({
   secret: "postgres-session",
   resave: false,
   saveUninitialized: false,
-  cookie: { maxAge: 24 * 60 * 60 * 1000, secure: process.env.NODE_ENV === "production" ? true : false, sameSite: "none" }
+  cookie: { path: "/", maxAge: 24 * 60 * 60 * 1000, secure: process.env.NODE_ENV === "production" ? true : false }
 }))
 
 
@@ -110,7 +111,6 @@ app.use(expressSession({
 //* same as passport.session
 // app.use(passport.authenticate('session'));
 
-
 /**
  * -------------- ROUTES ----------------
  */
@@ -118,7 +118,6 @@ app.use(expressSession({
 import authRoute from "./routes/authRoute.js";
 import getUserEmail from "./controllers/user/getUser.js";
 import { verifyToken } from "./lib/utils.js";
-
 
 app.get("^/$|index(.html)?", (_req, res) => {
   res.json({
@@ -133,6 +132,8 @@ apiRouter.use("/auth", authRoute);
 apiRouter.get("/user", getUserEmail);
 apiRouter.use(verifyToken)
 apiRouter.use("/todos", todosRouter);
+
+
 
 
 app.listen(port || 5001, () => {
