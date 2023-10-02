@@ -97,7 +97,7 @@ app.use(expressSession({
   secret: "postgres-session",
   resave: false,
   saveUninitialized: false,
-  cookie: { path: "/", maxAge: 24 * 60 * 60 * 1000, secure: process.env.NODE_ENV === "production" ? true : false, sameSite: process.env.NODE_ENV === "production" && "lax" }
+  cookie: { path: "/", maxAge: 24 * 60 * 60 * 1000, secure: process.env.NODE_ENV === "production" ? true : false, sameSite: process.env.NODE_ENV === "production" ? "lax" : "none" }
 }))
 
 
