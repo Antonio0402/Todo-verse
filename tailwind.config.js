@@ -58,7 +58,7 @@ export default {
       addBase({
         /* Set core root defaults */
         'html:focus-within': {
-          scollBehavior: 'smooth'
+          scrollBehavior: 'smooth'
         },
         /* Set core body defaults */
         'body': {

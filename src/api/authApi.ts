@@ -10,7 +10,7 @@ export const login = async (user_email: string, password: string) => {
         Accept: "application/json",
         "Content-Type": "application/json"
       },
-      credentials: "same-origin",
+      credentials: "include",
       method: "POST",
       body: JSON.stringify({
         user_email,
