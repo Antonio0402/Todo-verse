@@ -111,6 +111,11 @@ app.use(expressSession({
 //* same as passport.session
 // app.use(passport.authenticate('session'));
 
+app.use((req, _res, next) => {
+  console.log(req.url, req.session && req.session.user);
+  next();
+})
+
 /**
  * -------------- ROUTES ----------------
  */

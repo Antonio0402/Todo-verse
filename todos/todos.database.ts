@@ -10,8 +10,6 @@ export const pool = new Pool({
   database: process.env.PGDATABASE,
 })
 
-const client = new Client({ ssl: true });
-
 export const query = async (queryString: string | QueryConfig<any[]>, value?: any[]) => {
   const client = new Client({ ssl: true });
   await client.connect();

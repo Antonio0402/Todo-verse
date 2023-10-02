@@ -6,7 +6,7 @@ type User = {
 } | null;
 
 declare module "express-session" {
-  interface SessionData {
+  interface SessionData extends Session {
     user: User;
   }
 }
@@ -14,8 +14,9 @@ declare module "express-session" {
 declare global {
   namespace Express {
     interface Request {
-      id?: string,
+      id?: string;
       user_email?: string;
+      session: SessionData;
     }
   }
 }

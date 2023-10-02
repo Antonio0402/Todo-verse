@@ -6,6 +6,7 @@ import { User } from "../../model/user.model.js";
 
 const getUserEmail = async (req: Request, res: Response, next: NextFunction) => {
   const accessToken = req.session.user?.accessToken;
+  console.log(accessToken);
   if (accessToken && accessToken?.match(/\S+\.\S+\.\S+/) !== null) {
     try {
       const payload = jose.decodeJwt(accessToken);

@@ -9,6 +9,7 @@ const authentication = express.Router();
 authentication.post("/login", passport.authenticate('local', {
   failureRedirect: "/api/auth/login-failure",
   successRedirect: "/api/auth/login-success",
+  keepSessionInfo: true,
   // failureFlash: true,
 }));
 authentication.get("/login-failure", loginFailure);

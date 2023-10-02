@@ -21,19 +21,20 @@ const handleLogin = async (req: Request, res: Response, next: NextFunction) => {
     const accessToken = await signJwt({ "sub": user.user_email, role: "user" }, "access", "1h");
     const refreshToken = await signJwt({ "sub": user.user_email, role: "user" }, "refresh", "1d");
 
-    req.session.regenerate(function (err) {
+    req.session.regenerate(async function (err) {
       if (err) next(err)
-
       // store user information in session, typically a user id
       req.session.user = { accessToken };
       // save the session before redirection to ensure page
       // load does not happen before session is saved
-      req.session.save(function (err) {
-        if (err) return next(err)
+
+      req.session.save(async function (err) {
+        if (err) next(err)
       })
     });
-    const updateRefreshToken = await query(`UPDATE public.users SET refresh_token = $1 WHERE user_email = $2 RETURNING *;`, [refreshToken, user.user_email]);
 
+
+    const updateRefreshToken = await query(`UPDATE public.users SET refresh_token = $1 WHERE user_email = $2 RETURNING *;`, [refreshToken, user.user_email]);
     if (updateRefreshToken.rows.length) {
       res.status(200).json("You are authenticated")
     }
